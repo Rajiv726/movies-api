@@ -14,3 +14,8 @@ I have provided a *Movie API* for the ReactJS Application
 6. `git commit -m <your message>`
 7. `git push -u origin main`
 8. `git push`
+
+### DB options
+
+1. SQL      - MySQL, MariaDB, PostGreSQL
+2. NoSQL    - MongoDB
