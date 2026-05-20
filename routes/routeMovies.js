@@ -17,7 +17,7 @@ router.get("/movies", movieIndex);
 router.get("/movies/:id", movieDetail);
 
 // U - Update for particular movie
-router.put("/movies/:id", movieUpdate);
+router.put("/movie/:id", movieUpdate);
 
 // D - Delete older movie
 router.delete("/movies/:id", movieDelete);

@@ -36,7 +36,20 @@ export const movieDetail = async (req, res) => {
   }
 };
 
-export const movieUpdate = async (req, res) => {};
+export const movieUpdate = async (req, res) => {
+  try {
+    const updateMovie = await Movie.findOneAndReplace(
+      {
+        _id: req.params.id,
+      },
+      { title: req.body.title, desc: req.body.desc },
+      { new: true },
+    );
+    res.status(200).json(updateMovie);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
 
 export const movieDelete = (req, res) => {
   res.send("Delete a movie by its ID");
