@@ -20,6 +20,6 @@ router.get("/movies/:id", movieDetail);
 router.put("/movie/:id", movieUpdate);
 
 // D - Delete older movie
-router.delete("/movies/:id", movieDelete);
+router.delete("/movie/:id", movieDelete);
 
 export default router;
