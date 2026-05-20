@@ -23,9 +23,20 @@ export const movieCreate = async (req, res) => {
   }
 };
 
-export const movieUpdate = (req, res) => {
-  res.send("Update or Modify a movie by its ID");
+export const movieDetail = async (req, res) => {
+  try {
+    const movieUpdate = await Movie.findById(req.params.id);
+    if (movieUpdate === null) {
+      return res.status(404).json({ message: "Cannot find movie" });
+    } else {
+      res.json(movieUpdate);
+    }
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
 };
+
+export const movieUpdate = async (req, res) => {};
 
 export const movieDelete = (req, res) => {
   res.send("Delete a movie by its ID");
